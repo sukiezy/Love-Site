@@ -1,0 +1,454 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    /* Alterado de gradiente de preto/cinza para roxo escuro */
+    background: linear-gradient(135deg, #2c1f3d 0%, #3c2d4d 50%, #2c1f3d 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #ff69b4 0%, #fc53a8 100%);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.couple-name {
+    font-family: 'Playball', cursive;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 2px 2px 4px rgba(44, 31, 61, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contador de Relacionamento */
+.counter-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.counter-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff69b4;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.counter-item {
+    /* Alterado de gradiente de preto/cinza para roxo escuro */
+    background: linear-gradient(135deg, #2c1f3d 0%, #1e142b 43%, #251a33 100%);
+    border-radius: 15px;
+    padding: 30px 20px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.counter-item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff69b4, #fc53a8, #ff1493, #ff69b4);
+    border-radius: 15px;
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.counter-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+}
+
+.counter-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff69b4;
+    margin-bottom: 10px;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+}
+
+.counter-label {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Galeria de Fotos */
+.gallery-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff69b4;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+}
+
+.gallery-container {
+    /* Alterado de gradiente de preto/cinza para roxo escuro */
+    background: linear-gradient(135deg, #2c1f3d 0%, #1e142b 43%, #251a33 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+}
+
+.photo-display {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#current-photo {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    /* Alterada a sombra de preto para roxo escuro */
+    box-shadow: 0 10px 30px rgba(44, 31, 61, 0.5);
+    transition: all 0.3s ease;
+}
+
+.photo-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.photo-btn {
+    background: linear-gradient(135deg, #ff69b4 0%, #fc53a8 100%);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.photo-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+}
+
+.photo-counter {
+    font-size: 1.2rem;
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+.photo-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: #ff69b4;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Mensagem Romântica */
+.message-section {
+    padding: 60px 0;
+}
+
+.message-container {
+    /* Alterado de gradiente de preto/cinza para roxo escuro */
+    background: linear-gradient(135deg, #2c1f3d 0%, #1e142b 43%, #251a33 100%);
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 40px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.message-container::before {
+    content: '💕';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.1;
+}
+
+.message-container h2 {
+    font-family: 'Playball', cursive;
+    font-size: 3rem;
+    color: #ff69b4;
+    margin-bottom: 30px;
+    text-align: center;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+}
+
+.message-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    text-align: left;
+}
+
+.message-content p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #ff69b4;
+    margin-top: 30px;
+}
+
+/* Estatísticas */
+.stats-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.stats-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff69b4;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    /* Alterado de gradiente de preto/cinza para roxo escuro */
+    background: linear-gradient(135deg, #2c1f3d 0%, #1e142b 43%, #251a33 100%);
+    border-radius: 15px;
+    padding: 40px 20px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,105,180,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff69b4;
+    margin-bottom: 10px;
+    /* Alterada a sombra de preto para roxo escuro */
+    text-shadow: 1px 1px 2px rgba(44, 31, 61, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #ff69b4 0%, #fc53a8 100%);
+    margin-top: 40px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.date {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .couple-name {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .counter-number {
+        font-size: 2rem;
+    }
+
+    .message-container {
+        padding: 30px;
+    }
+
+    .message-container h2 {
+        font-size: 2rem;
+    }
+
+    .message-content {
+        font-size: 1rem;
+    }
+
+    .photo-thumbnails {
+        gap: 10px;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        padding: 20px;
+    }
+
+    #current-photo {
+        height: 300px;
+    }
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter-item,
+.stat-item,
+.message-container,
+.gallery-container {
+    animation: fadeInUp 0.8s ease-out;
+}
